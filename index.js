@@ -5,6 +5,7 @@ const dotenv  = require('dotenv');
 
 //Impoort Routes
 const authRoute = require('./routes/auth')
+const postRoute = require('./routes/post');
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 //Route Middleware
 app.use('/api/user', authRoute);
+app.use('/api/posts', postRoute);
 
 
 app.listen(3000,()=>console.log('Server Up and Running'));
